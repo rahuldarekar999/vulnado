@@ -8,7 +8,7 @@ public class Cowsay {
     ProcessBuilder processBuilder = new ProcessBuilder();
     String cmd = "/usr/games/cowsay '" + input + "'";
     System.out.println(cmd);
-    if(isValidCommand(cmd)){
+    if(mymethod(cmd)){
       processBuilder.command("bash", "-c", cmd);
     } else {
       return "hello";
@@ -28,7 +28,7 @@ public class Cowsay {
     }
     return output.toString();
   }
-  public boolean isValidCommand(String abcd){
+  public boolean mymethod(String abcd){
     return abcd.matches("[a-zA-Z0-9\\-\\_]+");
   }
 }
