@@ -29,6 +29,6 @@ public class Cowsay {
     return output.toString();
   }
   public boolean mymethod(String abcd){
-    return true;
+    return cmd.matches("[a-zA-Z0-9\\-\\_]+");
   }
 }
