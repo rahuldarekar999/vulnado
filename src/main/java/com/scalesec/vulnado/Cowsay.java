@@ -29,6 +29,6 @@ public class Cowsay {
     return output.toString();
   }
   public boolean isValidCommand(String abcd){
-    return cmd.matches("[a-zA-Z0-9\\-\\_]+");
+    return abcd.matches("[a-zA-Z0-9\\-\\_]+");
   }
 }
