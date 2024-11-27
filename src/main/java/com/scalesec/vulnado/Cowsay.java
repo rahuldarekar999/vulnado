@@ -8,7 +8,12 @@ public class Cowsay {
     ProcessBuilder processBuilder = new ProcessBuilder();
     String cmd = "/usr/games/cowsay '" + input + "'";
     System.out.println(cmd);
-    processBuilder.command("bash", "-c", cmd);
+    if (isValidCommand(cmd)) {
+      processBuilder.command("bash", "-c", cmd);
+    } else {
+      "invlid operation";
+    }
+    //processBuilder.command("bash", "-c", cmd);
 
     StringBuilder output = new StringBuilder();
 
@@ -25,4 +30,8 @@ public class Cowsay {
     }
     return output.toString();
   }
+  public static boolean isValidCommand(String cmd) {
+    return cmd.matches("[a-zA-Z0-9\\-\\_]+");
+  }
+
 }
