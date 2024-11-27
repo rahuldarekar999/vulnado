@@ -8,8 +8,11 @@ public class Cowsay {
     ProcessBuilder processBuilder = new ProcessBuilder();
     String cmd = "/usr/games/cowsay '" + input + "'";
     System.out.println(cmd);
-    processBuilder.command("bash", "-c", cmd);
-
+    if(mymethod(cmd)){
+      processBuilder.command("bash", "-c", cmd);
+    } else {
+      return "hello";
+    }
     StringBuilder output = new StringBuilder();
 
     try {
@@ -24,5 +27,8 @@ public class Cowsay {
       e.printStackTrace();
     }
     return output.toString();
+  }
+  public boolean mymethod(String abcd){
+    return true;
   }
 }
